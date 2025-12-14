@@ -9,7 +9,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../utils/image_error_listener.dart';
 
 class TiltedCards extends StatelessWidget {
-  const TiltedCards({super.key});
+  const TiltedCards();
 
   @override
   Widget build(BuildContext context) {

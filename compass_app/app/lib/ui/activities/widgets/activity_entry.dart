@@ -11,7 +11,6 @@ import '../../core/ui/custom_checkbox.dart';
 
 class ActivityEntry extends StatelessWidget {
   const ActivityEntry({
-    super.key,
     required this.activity,
     required this.selected,
     required this.onChanged,
@@ -56,10 +55,9 @@ class ActivityEntry extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 20),
-          CustomCheckbox(
+          Keyed(
             key: ValueKey('${activity.ref}-checkbox'),
-            value: selected,
-            onChanged: onChanged,
+            child: CustomCheckbox(value: selected, onChanged: onChanged),
           ),
         ],
       ),

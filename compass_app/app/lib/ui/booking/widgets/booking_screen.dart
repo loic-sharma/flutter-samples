@@ -12,7 +12,7 @@ import '../view_models/booking_viewmodel.dart';
 import 'booking_body.dart';
 
 class BookingScreen extends StatefulWidget {
-  const BookingScreen({super.key, required this.viewModel});
+  const BookingScreen({required this.viewModel});
 
   final BookingViewModel viewModel;
 
@@ -44,15 +44,17 @@ class _BookingScreenState extends State<BookingScreen> {
       child: Scaffold(
         floatingActionButton: ListenableBuilder(
           listenable: widget.viewModel,
-          builder: (context, _) => FloatingActionButton.extended(
-            // Workaround for https://github.com/flutter/flutter/issues/115358#issuecomment-2117157419
-            heroTag: null,
+          builder: (context, _) => Keyed(
             key: const ValueKey('share-button'),
-            onPressed: widget.viewModel.booking != null
-                ? widget.viewModel.shareBooking.execute
-                : null,
-            label: Text(AppLocalization.of(context).shareTrip),
-            icon: const Icon(Icons.share_outlined),
+            child: FloatingActionButton.extended(
+              // Workaround for https://github.com/flutter/flutter/issues/115358#issuecomment-2117157419
+              heroTag: null,
+              onPressed: widget.viewModel.booking != null
+                  ? widget.viewModel.shareBooking.execute
+                  : null,
+              label: Text(AppLocalization.of(context).shareTrip),
+              icon: const Icon(Icons.share_outlined),
+            ),
           ),
         ),
         body: ListenableBuilder(

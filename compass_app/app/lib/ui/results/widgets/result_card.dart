@@ -10,7 +10,7 @@ import '../../../utils/image_error_listener.dart';
 import '../../core/ui/tag_chip.dart';
 
 class ResultCard extends StatelessWidget {
-  const ResultCard({super.key, required this.destination, required this.onTap});
+  const ResultCard({required this.destination, required this.onTap});
 
   final Destination destination;
   final GestureTapCallback onTap;

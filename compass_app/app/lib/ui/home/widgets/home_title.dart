@@ -13,7 +13,7 @@ import '../../core/themes/dimens.dart';
 import '../view_models/home_viewmodel.dart';
 
 class HomeHeader extends StatelessWidget {
-  const HomeHeader({super.key, required this.viewModel});
+  const HomeHeader({required this.viewModel});
 
   final HomeViewModel viewModel;
 

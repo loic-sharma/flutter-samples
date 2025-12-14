@@ -19,11 +19,9 @@ import '../view_models/search_form_viewmodel.dart';
 /// Loads a list of continents in a horizontal carousel.
 /// Users can tap one item to select it.
 /// Tapping again the same item will deselect it.
-class SearchFormContinent extends StatelessWidget {
-  const SearchFormContinent({super.key, required this.viewModel});
-
-  final SearchFormViewModel viewModel;
-
+class const SearchFormContinent({
+  required final SearchFormViewModel viewModel,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -54,11 +52,13 @@ class SearchFormContinent extends StatelessWidget {
               padding: Dimens.of(context).edgeInsetsScreenHorizontal,
               itemBuilder: (BuildContext context, int index) {
                 final Continent(:imageUrl, :name) = viewModel.continents[index];
-                return _CarouselItem(
+                return Keyed(
                   key: ValueKey(name),
-                  imageUrl: imageUrl,
-                  name: name,
-                  viewModel: viewModel,
+                  child: _CarouselItem(
+                    imageUrl: imageUrl,
+                    name: name,
+                    viewModel: viewModel,
+                  ),
                 );
               },
               separatorBuilder: (BuildContext context, int index) {
@@ -72,18 +72,11 @@ class SearchFormContinent extends StatelessWidget {
   }
 }
 
-class _CarouselItem extends StatelessWidget {
-  const _CarouselItem({
-    super.key,
-    required this.imageUrl,
-    required this.name,
-    required this.viewModel,
-  });
-
-  final String imageUrl;
-  final String name;
-  final SearchFormViewModel viewModel;
-
+class const _CarouselItem({
+  required final String imageUrl,
+  required final String name,
+  required final SearchFormViewModel viewModel,
+}) extends StatelessWidget {
   bool _selected() =>
       viewModel.selectedContinent == null ||
       viewModel.selectedContinent == name;

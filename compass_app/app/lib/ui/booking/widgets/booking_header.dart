@@ -14,11 +14,9 @@ import '../../core/ui/date_format_start_end.dart';
 import '../../core/ui/home_button.dart';
 import '../../core/ui/tag_chip.dart';
 
-class BookingHeader extends StatelessWidget {
-  const BookingHeader({super.key, required this.booking});
-
-  final Booking booking;
-
+class const BookingHeader({
+  required final Booking booking,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(

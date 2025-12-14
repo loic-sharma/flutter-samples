@@ -17,11 +17,9 @@ import 'home_title.dart';
 
 const String bookingButtonKey = 'booking-button';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key, required this.viewModel});
-
-  final HomeViewModel viewModel;
-
+class const HomeScreen({
+  required final HomeViewModel viewModel,
+}) extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -49,13 +47,15 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton.extended(
-        // Workaround for https://github.com/flutter/flutter/issues/115358#issuecomment-2117157419
-        heroTag: null,
+      floatingActionButton: Keyed(
         key: const ValueKey(bookingButtonKey),
-        onPressed: () => context.go(Routes.search),
-        label: Text(AppLocalization.of(context).bookNewTrip),
-        icon: const Icon(Icons.add_location_outlined),
+        child: FloatingActionButton.extended(
+          // Workaround for https://github.com/flutter/flutter/issues/115358#issuecomment-2117157419
+          heroTag: null,
+          onPressed: () => context.go(Routes.search),
+          label: Text(AppLocalization.of(context).bookNewTrip),
+          icon: const Icon(Icons.add_location_outlined),
+        ),
       ),
       body: SafeArea(
         top: true,
@@ -93,28 +93,30 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   SliverList.builder(
                     itemCount: widget.viewModel.bookings.length,
-                    itemBuilder: (_, index) => _Booking(
+                    itemBuilder: (_, index) => Keyed(
                       key: ValueKey(widget.viewModel.bookings[index].id),
-                      booking: widget.viewModel.bookings[index],
-                      onTap: () => context.push(
-                        Routes.bookingWithId(
-                          widget.viewModel.bookings[index].id,
+                      child: _Booking(
+                        booking: widget.viewModel.bookings[index],
+                        onTap: () => context.push(
+                          Routes.bookingWithId(
+                            widget.viewModel.bookings[index].id,
+                          ),
                         ),
+                        confirmDismiss: (_) async {
+                          // wait for command to complete
+                          await widget.viewModel.deleteBooking.execute(
+                            widget.viewModel.bookings[index].id,
+                          );
+                          // if command completed successfully, return true
+                          if (widget.viewModel.deleteBooking.completed) {
+                            // removes the dismissable from the list
+                            return true;
+                          } else {
+                            // the dismissable stays in the list
+                            return false;
+                          }
+                        },
                       ),
-                      confirmDismiss: (_) async {
-                        // wait for command to complete
-                        await widget.viewModel.deleteBooking.execute(
-                          widget.viewModel.bookings[index].id,
-                        );
-                        // if command completed successfully, return true
-                        if (widget.viewModel.deleteBooking.completed) {
-                          // removes the dismissable from the list
-                          return true;
-                        } else {
-                          // the dismissable stays in the list
-                          return false;
-                        }
-                      },
                     ),
                   ),
                 ],
@@ -145,18 +147,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class _Booking extends StatelessWidget {
-  const _Booking({
-    super.key,
-    required this.booking,
-    required this.onTap,
-    required this.confirmDismiss,
-  });
-
-  final BookingSummary booking;
-  final GestureTapCallback onTap;
-  final ConfirmDismissCallback confirmDismiss;
-
+class const _Booking({
+  required final BookingSummary booking,
+  required final GestureTapCallback onTap,
+  required final ConfirmDismissCallback confirmDismiss,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dismissible(

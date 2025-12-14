@@ -8,11 +8,9 @@ import '../../../core/localization/applocalization.dart';
 import '../../../core/themes/colors.dart';
 import '../view_models/logout_viewmodel.dart';
 
-class LogoutButton extends StatefulWidget {
-  const LogoutButton({super.key, required this.viewModel});
-
-  final LogoutViewModel viewModel;
-
+class const LogoutButton({
+  required final LogoutViewModel viewModel,
+}) extends StatefulWidget {
   @override
   State<LogoutButton> createState() => _LogoutButtonState();
 }

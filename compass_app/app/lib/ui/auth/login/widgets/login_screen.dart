@@ -12,7 +12,7 @@ import '../view_models/login_viewmodel.dart';
 import 'tilted_cards.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key, required this.viewModel});
+  const LoginScreen({required this.viewModel});
 
   final LoginViewModel viewModel;
 

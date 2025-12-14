@@ -15,7 +15,7 @@ import '../../core/ui/home_button.dart';
 import '../../core/ui/tag_chip.dart';
 
 class BookingHeader extends StatelessWidget {
-  const BookingHeader({super.key, required this.booking});
+  const BookingHeader({required this.booking});
 
   final Booking booking;
 

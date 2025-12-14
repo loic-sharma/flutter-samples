@@ -8,7 +8,6 @@ import '../themes/colors.dart';
 
 class ErrorIndicator extends StatelessWidget {
   const ErrorIndicator({
-    super.key,
     required this.title,
     required this.label,
     required this.onPressed,

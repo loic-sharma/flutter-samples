@@ -11,7 +11,6 @@ import '../themes/colors.dart';
 
 class TagChip extends StatelessWidget {
   const TagChip({
-    super.key,
     required this.tag,
     this.fontSize = 10,
     this.height = 20,

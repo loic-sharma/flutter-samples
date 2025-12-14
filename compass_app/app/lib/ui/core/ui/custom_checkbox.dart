@@ -7,11 +7,7 @@ import 'package:flutter/material.dart';
 import '../themes/colors.dart';
 
 class CustomCheckbox extends StatelessWidget {
-  const CustomCheckbox({
-    super.key,
-    required this.value,
-    required this.onChanged,
-  });
+  const CustomCheckbox({required this.value, required this.onChanged});
 
   final bool value;
   final ValueChanged<bool?> onChanged;

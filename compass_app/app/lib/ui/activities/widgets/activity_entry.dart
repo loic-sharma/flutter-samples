@@ -9,18 +9,12 @@ import '../../../domain/models/activity/activity.dart';
 import '../../../utils/image_error_listener.dart';
 import '../../core/ui/custom_checkbox.dart';
 
-class ActivityEntry extends StatelessWidget {
-  const ActivityEntry({
-    super.key,
-    required this.activity,
-    required this.selected,
-    required this.onChanged,
-  });
-
-  final Activity activity;
-  final bool selected;
-  final ValueChanged<bool?> onChanged;
-
+class const ActivityEntry({
+  super.key,
+  required final Activity activity,
+  required final bool selected,
+  required final ValueChanged<bool?> onChanged,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(

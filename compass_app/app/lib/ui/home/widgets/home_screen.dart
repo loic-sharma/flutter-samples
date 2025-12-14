@@ -17,11 +17,10 @@ import 'home_title.dart';
 
 const String bookingButtonKey = 'booking-button';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key, required this.viewModel});
-
-  final HomeViewModel viewModel;
-
+class const HomeScreen({
+  super.key,
+  required final HomeViewModel viewModel,
+}) extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -145,18 +144,12 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class _Booking extends StatelessWidget {
-  const _Booking({
-    super.key,
-    required this.booking,
-    required this.onTap,
-    required this.confirmDismiss,
-  });
-
-  final BookingSummary booking;
-  final GestureTapCallback onTap;
-  final ConfirmDismissCallback confirmDismiss;
-
+class const _Booking({
+  super.key,
+  required final BookingSummary booking,
+  required final GestureTapCallback onTap,
+  required final ConfirmDismissCallback confirmDismiss,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dismissible(

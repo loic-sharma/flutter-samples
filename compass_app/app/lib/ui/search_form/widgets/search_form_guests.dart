@@ -15,11 +15,10 @@ const String addGuestsKey = 'add-guests';
 ///
 /// Users can tap the Plus and Minus icons to increase or decrease
 /// the number of guests.
-class SearchFormGuests extends StatelessWidget {
-  const SearchFormGuests({super.key, required this.viewModel});
-
-  final SearchFormViewModel viewModel;
-
+class const SearchFormGuests({
+  super.key,
+  required final SearchFormViewModel viewModel,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(

@@ -18,11 +18,10 @@ const String searchFormSubmitButtonKey = 'submit-button';
 /// The button is disabled when the form is data is incomplete.
 /// When tapped, it navigates to the [ResultsScreen]
 /// passing the search options as query parameters.
-class SearchFormSubmit extends StatefulWidget {
-  const SearchFormSubmit({super.key, required this.viewModel});
-
-  final SearchFormViewModel viewModel;
-
+class const SearchFormSubmit({
+  super.key,
+  required final SearchFormViewModel viewModel,
+}) extends StatefulWidget {
   @override
   State<SearchFormSubmit> createState() => _SearchFormSubmitState();
 }

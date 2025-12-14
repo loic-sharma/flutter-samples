@@ -9,23 +9,14 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../themes/colors.dart';
 
-class TagChip extends StatelessWidget {
-  const TagChip({
-    super.key,
-    required this.tag,
-    this.fontSize = 10,
-    this.height = 20,
-    this.chipColor,
-    this.onChipColor,
-  });
-
-  final String tag;
-
-  final double fontSize;
-  final double height;
-  final Color? chipColor;
-  final Color? onChipColor;
-
+class const TagChip({
+  super.key,
+  required final String tag,
+  final double fontSize = 10,
+  final double height = 20,
+  final Color? chipColor,
+  final Color? onChipColor,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(

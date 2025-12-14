@@ -11,11 +11,10 @@ import '../../core/ui/error_indicator.dart';
 import '../view_models/booking_viewmodel.dart';
 import 'booking_body.dart';
 
-class BookingScreen extends StatefulWidget {
-  const BookingScreen({super.key, required this.viewModel});
-
-  final BookingViewModel viewModel;
-
+class const BookingScreen({
+  super.key,
+  required final BookingViewModel viewModel,
+}) extends StatefulWidget {
   @override
   State<BookingScreen> createState() => _BookingScreenState();
 }

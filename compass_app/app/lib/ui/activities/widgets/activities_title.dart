@@ -9,16 +9,11 @@ import '../../core/themes/dimens.dart';
 import '../view_models/activities_viewmodel.dart';
 import 'activity_time_of_day.dart';
 
-class ActivitiesTitle extends StatelessWidget {
-  const ActivitiesTitle({
-    super.key,
-    required this.activityTimeOfDay,
-    required this.viewModel,
-  });
-
-  final ActivitiesViewModel viewModel;
-  final ActivityTimeOfDay activityTimeOfDay;
-
+class const ActivitiesTitle({
+  super.key,
+  required final ActivityTimeOfDay activityTimeOfDay,
+  required final ActivitiesViewModel viewModel,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final list = switch (activityTimeOfDay) {

@@ -12,11 +12,10 @@ import '../../core/localization/applocalization.dart';
 import '../../core/themes/dimens.dart';
 import '../view_models/home_viewmodel.dart';
 
-class HomeHeader extends StatelessWidget {
-  const HomeHeader({super.key, required this.viewModel});
-
-  final HomeViewModel viewModel;
-
+class const HomeHeader({
+  super.key,
+  required final HomeViewModel viewModel,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = viewModel.user;

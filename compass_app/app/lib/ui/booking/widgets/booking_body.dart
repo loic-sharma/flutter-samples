@@ -11,11 +11,10 @@ import '../../core/themes/dimens.dart';
 import '../view_models/booking_viewmodel.dart';
 import 'booking_header.dart';
 
-class BookingBody extends StatelessWidget {
-  const BookingBody({super.key, required this.viewModel});
-
-  final BookingViewModel viewModel;
-
+class const BookingBody({
+  super.key,
+  required final BookingViewModel viewModel,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListenableBuilder(

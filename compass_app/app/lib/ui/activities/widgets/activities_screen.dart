@@ -17,11 +17,10 @@ import 'activity_time_of_day.dart';
 
 const String confirmButtonKey = 'confirm-button';
 
-class ActivitiesScreen extends StatefulWidget {
-  const ActivitiesScreen({super.key, required this.viewModel});
-
-  final ActivitiesViewModel viewModel;
-
+class const ActivitiesScreen({
+  super.key,
+  required final ActivitiesViewModel viewModel,
+}) extends StatefulWidget {
   @override
   State<ActivitiesScreen> createState() => _ActivitiesScreenState();
 }

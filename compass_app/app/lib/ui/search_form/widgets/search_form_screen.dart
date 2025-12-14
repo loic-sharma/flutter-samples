@@ -20,11 +20,10 @@ import 'search_form_submit.dart';
 /// Displays a search form with continent, date and guests selection.
 /// Tapping on the submit button opens the [ResultsScreen] screen
 /// passing the search options as query parameters.
-class SearchFormScreen extends StatelessWidget {
-  const SearchFormScreen({super.key, required this.viewModel});
-
-  final SearchFormViewModel viewModel;
-
+class const SearchFormScreen({
+  super.key,
+  required final SearchFormViewModel viewModel,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopScope(

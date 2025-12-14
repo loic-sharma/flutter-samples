@@ -10,11 +10,10 @@ import '../themes/colors.dart';
 import 'blur_filter.dart';
 
 /// Home button to navigate back to the '/' path.
-class HomeButton extends StatelessWidget {
-  const HomeButton({super.key, this.blur = false});
-
-  final bool blur;
-
+class const HomeButton({
+  super.key,
+  final bool blur = false,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(

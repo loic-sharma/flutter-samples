@@ -8,7 +8,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../../utils/image_error_listener.dart';
 
-class const TiltedCards({super.key}) extends StatelessWidget {
+class const TiltedCards() extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(

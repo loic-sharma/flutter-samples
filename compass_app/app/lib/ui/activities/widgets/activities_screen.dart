@@ -18,7 +18,6 @@ import 'activity_time_of_day.dart';
 const String confirmButtonKey = 'confirm-button';
 
 class const ActivitiesScreen({
-  super.key,
   required final ActivitiesViewModel viewModel,
 }) extends StatefulWidget {
   @override
@@ -167,12 +166,14 @@ class _BottomArea extends StatelessWidget {
                 ).selected(viewModel.selectedActivities.length),
                 style: Theme.of(context).textTheme.labelLarge,
               ),
-              FilledButton(
-                key: const Key(confirmButtonKey),
-                onPressed: viewModel.selectedActivities.isNotEmpty
-                    ? viewModel.saveActivities.execute
-                    : null,
-                child: Text(AppLocalization.of(context).confirm),
+              Keyed(
+                key: const ValueKey(confirmButtonKey),
+                child: FilledButton(
+                  onPressed: viewModel.selectedActivities.isNotEmpty
+                      ? viewModel.saveActivities.execute
+                      : null,
+                  child: Text(AppLocalization.of(context).confirm),
+                ),
               ),
             ],
           ),

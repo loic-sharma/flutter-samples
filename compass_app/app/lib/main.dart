@@ -18,7 +18,7 @@ void main() {
   development.main();
 }
 
-class const MainApp({super.key}) extends StatelessWidget {
+class const MainApp() extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(

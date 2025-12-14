@@ -10,7 +10,6 @@ import 'package:google_fonts/google_fonts.dart';
 import '../themes/colors.dart';
 
 class const TagChip({
-  super.key,
   required final String tag,
   final double fontSize = 10,
   final double height = 20,

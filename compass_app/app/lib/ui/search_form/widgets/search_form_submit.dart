@@ -19,7 +19,6 @@ const String searchFormSubmitButtonKey = 'submit-button';
 /// When tapped, it navigates to the [ResultsScreen]
 /// passing the search options as query parameters.
 class const SearchFormSubmit({
-  super.key,
   required final SearchFormViewModel viewModel,
 }) extends StatefulWidget {
   @override
@@ -62,12 +61,14 @@ class _SearchFormSubmitState extends State<SearchFormSubmit> {
           child: Center(child: Text(AppLocalization.of(context).search)),
         ),
         builder: (context, child) {
-          return FilledButton(
+          return Keyed(
             key: const ValueKey(searchFormSubmitButtonKey),
-            onPressed: widget.viewModel.valid
-                ? widget.viewModel.updateItineraryConfig.execute
-                : null,
-            child: child,
+            child: FilledButton(
+              onPressed: widget.viewModel.valid
+                  ? widget.viewModel.updateItineraryConfig.execute
+                  : null,
+              child: child,
+            ),
           );
         },
       ),

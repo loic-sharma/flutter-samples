@@ -10,7 +10,6 @@ import '../view_models/activities_viewmodel.dart';
 import 'activity_time_of_day.dart';
 
 class const ActivitiesTitle({
-  super.key,
   required final ActivityTimeOfDay activityTimeOfDay,
   required final ActivitiesViewModel viewModel,
 }) extends StatelessWidget {

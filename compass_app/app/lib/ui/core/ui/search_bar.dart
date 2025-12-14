@@ -16,7 +16,6 @@ import 'home_button.dart';
 /// Displays a search bar with the current configuration.
 /// Includes [HomeButton] to navigate back to the '/' path.
 class const AppSearchBar({
-  super.key,
   final ItineraryConfig? config,
   final GestureTapCallback? onTap,
 }) extends StatelessWidget {

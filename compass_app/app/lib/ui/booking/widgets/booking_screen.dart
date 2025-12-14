@@ -12,7 +12,6 @@ import '../view_models/booking_viewmodel.dart';
 import 'booking_body.dart';
 
 class const BookingScreen({
-  super.key,
   required final BookingViewModel viewModel,
 }) extends StatefulWidget {
   @override

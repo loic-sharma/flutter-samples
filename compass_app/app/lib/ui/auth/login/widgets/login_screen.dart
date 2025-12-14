@@ -12,7 +12,6 @@ import '../view_models/login_viewmodel.dart';
 import 'tilted_cards.dart';
 
 class const LoginScreen({
-  super.key,
   required final LoginViewModel viewModel,
 }) extends StatefulWidget {
   @override

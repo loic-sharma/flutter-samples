@@ -20,7 +20,6 @@ import '../view_models/search_form_viewmodel.dart';
 /// Users can tap one item to select it.
 /// Tapping again the same item will deselect it.
 class const SearchFormContinent({
-  super.key,
   required final SearchFormViewModel viewModel,
 }) extends StatelessWidget {
   @override
@@ -53,11 +52,13 @@ class const SearchFormContinent({
               padding: Dimens.of(context).edgeInsetsScreenHorizontal,
               itemBuilder: (BuildContext context, int index) {
                 final Continent(:imageUrl, :name) = viewModel.continents[index];
-                return _CarouselItem(
+                return Keyed(
                   key: ValueKey(name),
-                  imageUrl: imageUrl,
-                  name: name,
-                  viewModel: viewModel,
+                  child: _CarouselItem(
+                    imageUrl: imageUrl,
+                    name: name,
+                    viewModel: viewModel,
+                  ),
                 );
               },
               separatorBuilder: (BuildContext context, int index) {
@@ -72,7 +73,6 @@ class const SearchFormContinent({
 }
 
 class const _CarouselItem({
-  super.key,
   required final String imageUrl,
   required final String name,
   required final SearchFormViewModel viewModel,

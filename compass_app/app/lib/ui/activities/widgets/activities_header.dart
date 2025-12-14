@@ -11,9 +11,7 @@ import '../../core/themes/dimens.dart';
 import '../../core/ui/back_button.dart';
 import '../../core/ui/home_button.dart';
 
-class const ActivitiesHeader({
-  super.key
-}) extends StatelessWidget {
+class const ActivitiesHeader() extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

@@ -10,7 +10,6 @@ import 'activity_entry.dart';
 import 'activity_time_of_day.dart';
 
 class const ActivitiesList({
-  super.key,
   required final ActivitiesViewModel viewModel,
   required final ActivityTimeOfDay activityTimeOfDay,
 }) extends StatelessWidget {
@@ -32,17 +31,19 @@ class const ActivitiesList({
           final activity = list[index];
           return Padding(
             padding: EdgeInsets.only(bottom: index < list.length - 1 ? 20 : 0),
-            child: ActivityEntry(
+            child: Keyed(
               key: ValueKey(activity.ref),
-              activity: activity,
-              selected: viewModel.selectedActivities.contains(activity.ref),
-              onChanged: (value) {
-                if (value!) {
-                  viewModel.addActivity(activity.ref);
-                } else {
-                  viewModel.removeActivity(activity.ref);
-                }
-              },
+              child: ActivityEntry(
+                activity: activity,
+                selected: viewModel.selectedActivities.contains(activity.ref),
+                onChanged: (value) {
+                  if (value!) {
+                    viewModel.addActivity(activity.ref);
+                  } else {
+                    viewModel.removeActivity(activity.ref);
+                  }
+                },
+              ),
             ),
           );
         }, childCount: list.length),

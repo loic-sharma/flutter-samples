@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import '../themes/colors.dart';
 
 class const ErrorIndicator({
-  super.key,
   required final String title,
   required final String label,
   required final VoidCallback onPressed,

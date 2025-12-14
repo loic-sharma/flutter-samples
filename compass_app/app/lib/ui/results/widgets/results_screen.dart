@@ -14,7 +14,6 @@ import '../view_models/results_viewmodel.dart';
 import 'result_card.dart';
 
 class const ResultsScreen({
-  super.key,
   required final ResultsViewModel viewModel,
 }) extends StatefulWidget {
   @override
@@ -156,12 +155,14 @@ class _Grid extends StatelessWidget {
       ),
       delegate: SliverChildBuilderDelegate((context, index) {
         final destination = viewModel.destinations[index];
-        return ResultCard(
+        return Keyed(
           key: ValueKey(destination.ref),
-          destination: destination,
-          onTap: () {
-            viewModel.updateItineraryConfig.execute(destination.ref);
-          },
+          child: ResultCard(
+            destination: destination,
+            onTap: () {
+              viewModel.updateItineraryConfig.execute(destination.ref);
+            },
+          ),
         );
       }, childCount: viewModel.destinations.length),
     );

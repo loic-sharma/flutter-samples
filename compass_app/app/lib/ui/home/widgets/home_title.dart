@@ -13,7 +13,6 @@ import '../../core/themes/dimens.dart';
 import '../view_models/home_viewmodel.dart';
 
 class const HomeHeader({
-  super.key,
   required final HomeViewModel viewModel,
 }) extends StatelessWidget {
   @override

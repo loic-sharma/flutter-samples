@@ -10,7 +10,6 @@ import 'blur_filter.dart';
 
 /// Custom back button to pop navigation.
 class const CustomBackButton({
-  super.key,
   final bool blur = false,
   final GestureTapCallback? onTap,
 }) extends StatelessWidget {

@@ -10,7 +10,6 @@ import '../../../utils/image_error_listener.dart';
 import '../../core/ui/custom_checkbox.dart';
 
 class const ActivityEntry({
-  super.key,
   required final Activity activity,
   required final bool selected,
   required final ValueChanged<bool?> onChanged,
@@ -50,10 +49,9 @@ class const ActivityEntry({
             ),
           ),
           const SizedBox(width: 20),
-          CustomCheckbox(
+          Keyed(
             key: ValueKey('${activity.ref}-checkbox'),
-            value: selected,
-            onChanged: onChanged,
+            child: CustomCheckbox(value: selected, onChanged: onChanged),
           ),
         ],
       ),

@@ -11,7 +11,6 @@ import 'blur_filter.dart';
 
 /// Home button to navigate back to the '/' path.
 class const HomeButton({
-  super.key,
   final bool blur = false,
 }) extends StatelessWidget {
   @override

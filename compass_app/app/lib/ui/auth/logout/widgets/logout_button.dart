@@ -9,7 +9,6 @@ import '../../../core/themes/colors.dart';
 import '../view_models/logout_viewmodel.dart';
 
 class const LogoutButton({
-  super.key,
   required final LogoutViewModel viewModel,
 }) extends StatefulWidget {
   @override
